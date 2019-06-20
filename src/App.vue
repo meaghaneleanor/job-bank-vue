@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="App">
     <Header />
-      <h1>Hiiiii</h1>
+    <h1>Hiiiii</h1>
     <Footer />
   </div>
 </template>
@@ -11,10 +11,10 @@ import Header from './components/common/Header.vue';
 import Footer from './components/common/Footer.vue';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Header,
     Footer
   }
-}
+};
 </script>

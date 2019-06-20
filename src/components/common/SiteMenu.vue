@@ -1,33 +1,30 @@
 <template>
   <div>
-  <nav role="navigation" aria-label="Primary navigation" class="ontario-site-nav">
+    <nav role="navigation" aria-label="Primary navigation" class="ontario-site-nav">
+      <button type="button" class="ontario-button ontario-site-nav__nav-toggle ontario-float-right" data-toggle="dropdown">
+        <i class="ontario-icon ontario-icon--menu ontario-icon--size-medium hide-for-small-only" aria-hidden="true" /> MENU
+      </button>
 
-    <button type="button" class="ontario-button ontario-site-nav__nav-toggle ontario-float-right" data-toggle="dropdown">
-      <i class="ontario-icon ontario-icon--menu ontario-icon--size-medium hide-for-small-only" aria-hidden="true" /> MENU
-    </button>
+      <a class="ontario-site-nav__translation-link ontario-float-right">
+        <span class="show-for-large">english</span>
+        <span class="hide-for-large">
+          <abbr title="english">ER</abbr>
+        </span>
+      </a>
 
-    <a class="ontario-site-nav__translation-link ontario-float-right">
-      <span class="show-for-large">english</span>
-      <span class="hide-for-large">
-        <abbr title="english">ER</abbr>
-      </span>
-    </a>
-
-    <div
-      id="dropdown"
-      class="dropdown-pane ontario-site-nav__dropdown-pane"
-      ref="dropdown"
-      data-dropdown data-v-offset="15" data-position="bottom" data-alignment="right"
-      data-auto-focus="true" data-close-on-click="true">
-
+      <div
+        id="dropdown"
+        class="dropdown-pane ontario-site-nav__dropdown-pane"
+        ref="dropdown"
+        data-dropdown data-v-offset="15" data-position="bottom" data-alignment="right"
+        data-auto-focus="true" data-close-on-click="true">
         <ul class="ontario-list--no-bullet">
           <li v-for="(link, index) in navLinks" :key="index" class="ontario-site-nav__dropdown-links">
             <a :href="link.href">{{ link.title }}</a>
           </li>
         </ul>
-
-    </div>
-  </nav>
+      </div>
+    </nav>
   </div>
 </template>
 
@@ -89,10 +86,10 @@ export default {
           'href': 'https://www.ontario.ca/page/travel-and-recreation'
         }
       ], 
-    }
+    };
   },
   mounted() {
-    this.$foundation(this.$refs.dropdown)
+    this.$foundation(this.$refs.dropdown);
   }
-}
+};
 </script>

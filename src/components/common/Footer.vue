@@ -3,7 +3,9 @@
     <div class="grid-container">
       <div class="grid-x">
         <div class="ontario-main-footer__topic-links-list cell columns show-for-medium large-3 medium-4 medium-order-3" aria-labelledby="ontario-footer-topics">
-          <div class="ontario-main-footer__subheading" id="ontario-footer-topics">Topics</div>
+          <div class="ontario-main-footer__subheading">
+            Topics
+          </div>
           <ul class="ontario-list--no-bullet">
             <li v-for="(link, index) in topicLinks" type="main" :key="index">
               <a :href="link.href" class="ontario-main-footer__topic-link">{{ link.title }}</a>
@@ -13,8 +15,7 @@
 
         <div class="ontario-main-footer__contact cell columns large-2 medium-3 medium-order-2 small-order-1" aria-labelledby="ontario-footer-contact">
           <dl>
-            <dt class="ontario-main-footer__subheading hide-for-small-only" id="ontario-footer-contact">
-            </dt>
+            <dt class="ontario-main-footer__subheading hide-for-small-only" />
             <dd>
               <a href="#">
                 <div class="ontario-icon ontario-icon-wrapper--long">
@@ -29,11 +30,13 @@
         <div class="ontario-main-footer__ministry-block cell columns large-7 medium-5 small-12 medium-order-1 small-order-2" aria-labelledby="ontario-footer-ministry">
           <div class="grid-x">
             <div class="ontario-main-footer__ministry-photo-container cell large-4">
-              <img class="ontario-main-footer__ministry-photo" src="../../../public/trillium_10.jpg" />
+              <img class="ontario-main-footer__ministry-photo" src="../../../public/trillium_10.jpg">
             </div>
 
             <div class="ontario-main-footer__ministry-tagline cell large-8">
-              <div class="ontario-main-footer__ministry-subheading" id="ontario-footer-ministry">Government of Ontario</div>
+              <div class="ontario-main-footer__ministry-subheading" id="ontario-footer-ministry">
+                Government of Ontario
+              </div>
               <p>The Government of Ontario includes ministries, agencies and Crown corporations.</p>
             </div>
           </div>
@@ -135,8 +138,8 @@ export default {
           'title': 'Travel and recreation',
           'href': 'https://www.ontario.ca/page/travel-and-recreation'
         }
-      ], 
-    }
+      ],
+    };
   }
-}
+};
 </script>

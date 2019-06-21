@@ -30,7 +30,7 @@
         <div class="ontario-main-footer__ministry-block cell columns large-7 medium-5 small-12 medium-order-1 small-order-2" aria-labelledby="ontario-footer-ministry">
           <div class="grid-x">
             <div class="ontario-main-footer__ministry-photo-container cell large-4">
-              <img class="ontario-main-footer__ministry-photo" src="../../../public/trillium_10.jpg">
+              <img class="ontario-main-footer__ministry-photo" src="/trillium_10.jpg">
             </div>
 
             <div class="ontario-main-footer__ministry-tagline cell large-8">

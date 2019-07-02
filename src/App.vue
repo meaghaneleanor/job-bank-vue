@@ -1,7 +1,7 @@
 <template>
   <div id="App">
     <Header />
-    <h1>Hiiiii</h1>
+    <h1>{{ $t('greeting') }}</h1>
     <Footer />
   </div>
 </template>

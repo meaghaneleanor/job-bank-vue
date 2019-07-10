@@ -85,5 +85,8 @@ export default {
       }  
     ],
     'copyright': '© Queen\'s Printer for Ontario, 2012-19'
+  },
+  'jobPage': {
+    'title': 'Job Page!'
   }  
 };

@@ -85,5 +85,8 @@ export default {
       }  
     ],
     'copyright': '© Imprimeur de la Reine pour l’Ontario, 2012‑19',
+  },
+  'jobPage': {
+    'title': 'Page de job!'
   }   
 };

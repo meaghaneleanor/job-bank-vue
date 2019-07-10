@@ -31,18 +31,26 @@
 </template>
 
 <script>
+import routeTranslation from '../../translations/route-translations.js';
+
 export default {
   methods: {
     switchLocale() {
-      if (this.$i18n.locale === 'en') {
-        this.$i18n.locale = 'fr';
-      } else {
-        this.$i18n.locale = 'en';
-      }
+      //get the users locale and set it to the opposite if the switch locale link is clicked
+      this.$i18n.locale = (this.$i18n.locale === 'en') ? 'fr' : 'en';
+
+      //find the opposite locale to retrieve the opposite path for routing
+      let switchedLocale = (this.$i18n.locale === 'en') ? 'fr' : 'en';
+
+      //get the full path of the current route
+      let fullPath = this.$route.fullPath;
+
+      //if a user clicks the switch locale link, retrieve the opposite locale's route path based on the current path
+      this.$router.push({ path: routeTranslation[switchedLocale][fullPath]});
     }
   },
   mounted() {
     this.$foundation(this.$refs.dropdown);
-  },
+  }
 };
 </script>

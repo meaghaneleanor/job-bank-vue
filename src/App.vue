@@ -1,14 +1,14 @@
 <template>
   <div id="App">
     <Header />
-    <h1>{{ $t('greeting') }}</h1>
+    <router-view /> 
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from './components/common/Header.vue';
-import Footer from './components/common/Footer.vue';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
 
 export default {
   name: 'App',

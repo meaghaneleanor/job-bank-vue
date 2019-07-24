@@ -15,9 +15,22 @@ In the project directory:
 * Install dependencies using `npm install`
 * Compile and run the server locally using `npm run serve`
 
-****Linting****  
-To run ESLint and lint files, use the command `npm run lint`. 
-  
+**Docker**
+This project is also equipped with Docker containers, and you can choose to run it using Docker instead of `npm` if you prefer. A `docker-compose.yml` file has been provided. To run it with docker, assuming you have the dependencies installed, run the following commands:
+
+```
+docker-machine start default
+eval $(docker-machine env)
+docker-compose up
+```
+
+You will be able to access the server at `http://192.168.99.100/`. You may want to setup [port forwarding](https://www.jhipster.tech/tips/020_tip_using_docker_containers_as_localhost_on_mac_and_windows.html) in virtualbox or in hosts if you would like to be able to go directly to `http://localhost`.
+
+
+**Linting**
+To run ESLint and lint files, use the command `npm run lint`.
+
+
 ---
 ## **Project Organization**
 ---

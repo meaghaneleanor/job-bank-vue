@@ -18,8 +18,12 @@
         id="dropdown"
         class="dropdown-pane ontario-site-nav__dropdown-pane"
         ref="dropdown"
-        data-dropdown data-v-offset="15" data-position="bottom" data-alignment="right"
-        data-auto-focus="true" data-close-on-click="true">
+        data-dropdown="main-menu-dropdown"
+        data-v-offset="15" 
+        data-position="bottom" 
+        data-alignment="right"
+        data-auto-focus="true" 
+        data-close-on-click="true">
         <ul class="ontario-list--no-bullet">
           <li v-for="(link, index) in $t('navLinks')" :key="index" class="ontario-site-nav__dropdown-links">
             <a :href="link.href">{{ link.title }}</a>

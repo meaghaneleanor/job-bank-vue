@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header.vue snapshot should display the expected html 1`] = `
+"<div><nav role=\\"navigation\\" aria-label=\\"Primary navigation\\" class=\\"ontario-site-nav\\"><button type=\\"button\\" data-toggle=\\"dropdown\\" class=\\"ontario-button ontario-site-nav__nav-toggle ontario-float-right\\"><i aria-hidden=\\"true\\" class=\\"ontario-icon ontario-icon--menu ontario-icon--size-medium hide-for-small-only\\"></i> 
+    </button> <a class=\\"ontario-site-nav__translation-link ontario-float-right\\"><span class=\\"show-for-large\\">français</span> <span class=\\"hide-for-large\\"><abbr title=\\"français\\">FR</abbr></span></a> <div id=\\"dropdown\\" data-dropdown=\\"main-menu-dropdown\\" data-v-offset=\\"15\\" data-position=\\"bottom\\" data-alignment=\\"right\\" data-auto-focus=\\"true\\" data-close-on-click=\\"true\\" class=\\"dropdown-pane ontario-site-nav__dropdown-pane\\" aria-hidden=\\"true\\" data-yeti-box=\\"dropdown\\" data-resize=\\"dropdown\\"><ul class=\\"ontario-list--no-bullet\\"></ul></div></nav></div>"
+`;

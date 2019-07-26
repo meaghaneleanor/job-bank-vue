@@ -1,16 +1,18 @@
 <template>
   <div>
     <h1>Testing</h1>
-    <router-link :to="translateRoute('jobs')">
-      {{ $t('jobPage.title') }}
-    </router-link>
+    <InternalLink 
+      :url="'jobs'"
+      :link-text="$t('jobPage.title')" />
   </div>
 </template>
 
 <script>
-import { translate } from '../../mixins/translate.js';
+import InternalLink from '../job-bank/InternalLink';
 
 export default {
-  mixins: [translate]
+  components: {
+    InternalLink
+  }
 };
 </script>

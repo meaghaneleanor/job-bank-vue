@@ -44,6 +44,7 @@ The majority of any new development will happen in the  **src** folder. Within t
 **Components**:
 * Includes all core components for the job-bank project. 
 * The **common** folder includes components that are used throughout many pages of the job-bank application (ex: Header, footer, etc.);
+* The **job-bank** folder includes components that are more specifically used for the job-bank project.
 
 **Plugins**: 
 * Includes all plugin files.

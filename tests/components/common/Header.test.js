@@ -1,16 +1,16 @@
 import { shallowMount } from '@vue/test-utils';
-import messages from '../../../src/translations';
+import { $t, i18nMock } from '../../test.utils.js';
+
 import Header from '../../../src/components/common/Header.vue';
 
-const createComponent = shallowMount(Header, {
+const defaultOptions = {
   mocks: {
-    $t: () => {},
-    $i18n: {
-      locale: 'en',
-      messages
-    }
+    $t, 
+    i18nMock
   }
-});
+};
+
+const createComponent = shallowMount(Header, defaultOptions);
 
 describe('Header.vue', () => {
   describe('snapshot', () => {

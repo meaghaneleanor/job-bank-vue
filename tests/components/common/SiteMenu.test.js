@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
+import { $t } from '../../test.utils.js';
 
-import messages from '../../../src/translations';
 import routeTranslation from '../../../src/translations/route-translations.js';
 import foundation from '../../../src/plugins/vue-foundation.js';
 
@@ -13,10 +13,9 @@ const $route = {
 
 const createComponent = shallowMount(SiteMenu, {
   mocks: {
-    $t: () => {},
+    $t,
     $i18n: {
-      locale: 'en',
-      messages
+      locale: 'en'
     },
     $route,
     routeTranslation,
@@ -28,7 +27,7 @@ const createComponent = shallowMount(SiteMenu, {
   },
 });
 
-describe('Header.vue', () => {
+describe('SiteMenu.vue', () => {
   describe('snapshot', () => {
     it('should display the expected html', () => {
       let wrapper = createComponent;
@@ -44,18 +43,22 @@ describe('Header.vue', () => {
         wrapper = createComponent;
         wrapper.find('.ontario-site-nav__translation-link').trigger('click');
       });
+      
+      describe('When the language toggle is clicked once', () => {
+        it('should switch the locale to french', () => {
+          expect(wrapper.vm.$i18n.locale).toEqual('fr');
+        });
 
-      it('should switch the locale when the language toggle is clicked', () => {
-        expect(wrapper.vm.$i18n.locale).toEqual('fr');
+        it('should route to the correct french path', () => {
+          expect(wrapper.vm.$router.push).toHaveBeenCalledWith({path: '/fr/page'});
+        });
       });
 
-      it('should route to the correct path', () => {
-        expect(wrapper.vm.$router.push).toHaveBeenCalledWith({path: '/fr/page'});
-      });
-
-      it('should switch locale again if clicked twice', () => {
-        wrapper.find('.ontario-site-nav__translation-link').trigger('click');
-        expect(wrapper.vm.$i18n.locale).toEqual('en');
+      describe('When the language toggle is clicked twice', () => {
+        it('should switch locale back to english', () => {
+          wrapper.find('.ontario-site-nav__translation-link').trigger('click');
+          expect(wrapper.vm.$i18n.locale).toEqual('en');
+        });
       });
     });
   });

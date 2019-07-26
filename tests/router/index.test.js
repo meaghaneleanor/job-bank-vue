@@ -11,18 +11,22 @@ describe('Router', () => {
 
       let mockLocaleSetter = jest.fn(localeSetter);
 
-      it('should set the default locale to english', () => {
+      describe('When the URL has no language parameter in it', () => {
         let to = { fullPath: '/page' };
-
-        mockLocaleSetter(to, undefined, $router.next);
-        expect(i18n.locale).toEqual('en');    
+        
+        it('should set the default locale to english', () => {
+          mockLocaleSetter(to, undefined, $router.next);
+          expect(i18n.locale).toEqual('en');    
+        });
       });
 
-      it('should set the locale to french if the language prefix is `/fr/`', () => {
+      describe('When the URL begins with /fr/', () => {
         let to = { fullPath: '/fr/page' };
-  
-        mockLocaleSetter(to, undefined, $router.next);
-        expect(i18n.locale).toEqual('fr'); 
+
+        it('should set the locale to french', () => {
+          mockLocaleSetter(to, undefined, $router.next);
+          expect(i18n.locale).toEqual('fr'); 
+        });
       });
     });
   });

@@ -1,16 +1,16 @@
 import { shallowMount } from '@vue/test-utils';
-import messages from '../../../src/translations';
+import { $t, i18nMock } from '../../test.utils.js';
+
 import Footer from '../../../src/components/common/Footer.vue';
 
-const createComponent = shallowMount(Footer, {
+const defaultOptions = {
   mocks: {
-    $t: () => {},
-    $i18n: {
-      locale: 'en',
-      messages
-    }
+    $t, 
+    i18nMock
   }
-});
+};
+
+const createComponent = shallowMount(Footer, defaultOptions);
 
 describe('Footer.vue', () => {
   describe('snapshot', () => {

@@ -1,4 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils';
+import {$t} from './test.utils.js';
 import VueRouter from 'vue-router';
 
 import routes from '../src/router/routes';
@@ -14,12 +15,10 @@ const router = new VueRouter({
 });
 localVue.use(router);
 
-let translateRoute = jest.fn();
-
 const createComponent = mount(App, {
   mocks: {
-    $t: () => {},
-    translateRoute
+    $t,
+    translateRoute: jest.fn()
   },
   localVue,
   router,
@@ -34,7 +33,7 @@ describe("App.vue", () => {
     });
   });
 
-  describe('routing', () => {
+  describe('router-view', () => {
     it("renders a child component via routing", () => {
       const wrapper = createComponent;
       wrapper.vm.$router.push("/page");

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Testing</h1>
-    <router-link :to="translateRoute('jobs')">
+    <router-link :to="translateRoute('job-bank-search')">
       {{ $t('jobPage.title') }}
     </router-link>
   </div>

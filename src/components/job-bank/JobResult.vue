@@ -12,9 +12,9 @@
         <p>$$ Salary $$</p>
       </div>
       <div class="ontario-job-bank-result__single-job--job-details-button  ontario-grid-cell large-2 small-3">
-          <a href="#" class="ontario-button ontario-button--primary">
-              Job details
-          </a>
+        <a href="#" class="ontario-button ontario-button--primary">
+          Job details
+        </a>
       </div>
     </div>
   </div>
@@ -27,5 +27,5 @@ export default {
   components: {
     NewJobFlag
   }
-}
+};
 </script>

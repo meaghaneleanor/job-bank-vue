@@ -7,8 +7,8 @@ import foundation from '../../../src/plugins/vue-foundation.js';
 import SiteMenu from '../../../src/components/common/SiteMenu.vue';
 
 const $route = {
-  path: '/page',
-  fullPath: '/page'
+  path: '/page/ontario-job-bank',
+  fullPath: '/page/ontario-job-bank'
 };
 
 const createComponent = shallowMount(SiteMenu, {
@@ -50,7 +50,7 @@ describe('SiteMenu.vue', () => {
         });
 
         it('should route to the correct french path', () => {
-          expect(wrapper.vm.$router.push).toHaveBeenCalledWith({path: '/fr/page'});
+          expect(wrapper.vm.$router.push).toHaveBeenCalledWith({path: '/fr/page/guichet-emplois-ontario'});
         });
       });
 

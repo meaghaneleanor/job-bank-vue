@@ -1,11 +1,9 @@
 export default {
   'en' : {
-    '/page': '/fr/page',
-    '/page/jobs': '/fr/page/carrieres'
+    '/page/ontario-job-bank': '/fr/page/guichet-emplois-ontario'
   },
   'fr': {
-    '/fr/page': '/page',
-    '/fr/page/carrieres': '/page/jobs'
+    '/fr/page/guichet-emplois-ontario': '/page/ontario-job-bank'
   },
 };
   

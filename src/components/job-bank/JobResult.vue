@@ -44,9 +44,7 @@ export default {
       const regex = /['$']/g;
       let match = salary.match(regex);
 
-      if (match === null) {
-        return true;
-      }
+      return !match;
     }
   }
 };
@@ -60,6 +58,7 @@ export default {
 
   .ontario-job-bank__single-job:last-of-type {
     border-bottom: 3px solid rgb(230, 230, 230);
+    margin-bottom: 3.5rem;
   }
 
   .ontario-job-bank-result__single-job--info {

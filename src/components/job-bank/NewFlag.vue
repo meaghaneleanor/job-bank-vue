@@ -1,5 +1,5 @@
 <template>
-  <div v-if="checkTimeDifference()"
+  <div v-if="checkTimeDifference(date)"
        class="ontario-grid-cell large-1 large-offset-11 small-2 small-offset-10">
     <p>{{ $t('jobPage.newFlag') }}</p>
   </div>
@@ -14,12 +14,12 @@ export default {
     }
   },
   methods: {
-    checkTimeDifference() {
+    checkTimeDifference(date) {
       //get todays date in milliseconds
       let todaysDate = Date.now();
 
       //get job date in milliseconds
-      let parsedDate = Date.parse(this.$props.date);
+      let parsedDate = Date.parse(date);
 
       //compare time difference in milliseconds
       let timeDifference = todaysDate - parsedDate;
@@ -32,7 +32,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-  
-</style>

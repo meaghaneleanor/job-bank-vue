@@ -7,25 +7,21 @@ const defaultOptions = {
   mocks: {
     $t, 
     i18nMock,
-    checkTimeDifference: jest.fn()
+    
   },
   propsData:{
     date: '2019-07-10T10:59:00Z'
   }
 };
 
-const createComponent = shallowMount(NewFlag, defaultOptions);
+const createComponent = (options = defaultOptions) => shallowMount(NewFlag, options);
 
 describe('NewFlag.vue', () => {
   let wrapper;
-      
-  beforeEach(() => {
-    wrapper = createComponent;
-  });
   
   describe('snapshot', () => {
     it('should display the expected html', () => {
-      let wrapper = createComponent;
+      wrapper = createComponent();
       expect(wrapper.html()).toMatchSnapshot();
     });
   });
@@ -41,10 +37,8 @@ describe('NewFlag.vue', () => {
       });
 
       describe('if the job was posted within 3 days from the current date', () => {
-        let date = new Date();
-
         it('should return false', () => {
-          expect(wrapper.vm.checkTimeDifference(date)).toEqual(true);
+          expect(wrapper.vm.checkTimeDifference(Date.now())).toEqual(true);
         });
       });
     });

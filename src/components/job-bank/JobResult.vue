@@ -17,7 +17,7 @@
           {{ job.salary }}
         </p>
       </div>
-      <div class="ontario-job-bank-result__single-job--job-details-button  ontario-grid-cell large-3 medium-3 small-3">
+      <div class="ontario-job-bank-result__single-job--job-details-button ontario-grid-cell large-3 medium-3 small-3">
         <a :href="job.url" class="ontario-button ontario-button--primary">
           {{ $t('jobPage.detailsButton') }}
         </a>
@@ -74,5 +74,6 @@ export default {
     right: 0;
     bottom: 0;
     margin-right: 0;
+    margin-bottom: 5px;
   }
 </style>

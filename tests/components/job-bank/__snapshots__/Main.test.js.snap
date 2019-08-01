@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main.vue snapshot should display the expected html 1`] = `"<div><h1>Ontario job bank</h1> </div>"`;

@@ -2,7 +2,7 @@
   <div>
     <h1>Testing</h1>
     <InternalLink 
-      :url="'jobs'"
+      :url="jobs"
       :link-text="$t('jobPage.title')" />
   </div>
 </template>

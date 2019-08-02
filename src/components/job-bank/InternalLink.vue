@@ -1,7 +1,9 @@
 <template>
-  <router-link :to="translateRoute(url)">
-    {{ linkText }}
-  </router-link>
+  <div>
+    <router-link :to="translateRoute(validURL)">
+     {{ linkText }}
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -18,6 +20,18 @@ export default {
       required: true
     },
   },
-  mixins: [translate]
+  mixins: [translate],
+  computed: {
+    validURL(url) {
+      url = this.$props.url;
+      console.log(url);
+      //if the url does not start and end with a single quote
+      if (!url.match(/^.*'$/g)) {
+        console.log(url);
+      }
+
+      return url;
+    }
+  }
 };
 </script>

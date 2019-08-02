@@ -13,6 +13,7 @@ This project requires node 12.4.0. This means a node version of 12.4.0 or higher
 
 In the project directory:
 * Install dependencies using `npm install`
+* Copy the `default.env` into a `.env` file
 * Compile and run the server locally using `npm run serve`
 
 **Docker**

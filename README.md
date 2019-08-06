@@ -80,9 +80,9 @@ When the main language is toggled (controlled by the *switchLocale* function in 
 ### ***Creating Links***
 **Internal Links (Router-Links)**
 
-Internal links (links within the job bank application), are created with the InternalLink job-bank component. The InternalLink component uses vue-router's router-link element behind the scenes. It renders as an anchor tag with correct href based on the attribute values passed in.
+Internal links (links within the job bank application), are created with the InternalLink job-bank component. The InternalLink component uses vue-router's router-link element behind the scenes. It renders as an anchor tag with a correct href based on the attribute values passed in.
 
-The InternalLink component requires two element attributes: the url and the link-text. The url must always be in single quotes, since that's how it's defined in the routes. The link-text attribute would likely be generated using i18n's translate method, also passed with single quotes. 
+The InternalLink component requires two element attributes: the URL and the link-text. The URL must **always** be in single quotes, as a string is required as the URL value for the link to render. The link-text attribute would likely be generated using i18n's translate method, also passed with single quotes. 
 
 An example of how the Internal Link component would be used looks like:
 

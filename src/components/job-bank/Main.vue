@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Ontario job bank</h1>
+    <h1 class="ontario-padding--bottom-double">Ontario job bank</h1>
+    <Search />
     <JobResult 
       v-for="job in jobsObject.jobs" 
       :key="job.id"
@@ -12,16 +13,18 @@
 <script>
 import getJobs from '../../mixins/getJobs.js'; 
 import JobResult from './JobResult.vue';
+import Search from './Search.vue';
 
 export default {
   components: {
-    JobResult
+    JobResult,
+    Search
   }, 
   mixins: [getJobs],
   computed: {
     jobsObject() {
       return this.getJobs(this.$i18n.locale);
     }
-  }
+  },
 };
 </script>

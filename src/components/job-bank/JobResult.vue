@@ -10,8 +10,8 @@
       </div>
       <div class="ontario-job-bank-result__single-job--info  ontario-grid-cell large-8 medium-8 small-7">
         <p><a :href="job.url">{{ job.title }}</a></p>
-        <p>{{ job.company }} </p>
-        <p>{{ job.city }}, ON</p>
+        <p>{{ job.employer_name }} </p>
+        <p>{{ job.city_name }}, ON</p>
         <p>
           <span v-if="this.addSalaryString(job.salary)">{{ $t('jobPage.salaryString') }}</span>
           {{ job.salary }}

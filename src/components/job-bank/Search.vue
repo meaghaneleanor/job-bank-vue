@@ -12,7 +12,7 @@
              id="ontario-job-bank__search-input"
              type="search">
       <button class="ontario-button ontario-button--primary ontario-job-bank__search-button"
-              v-on:click.prevent="searchForJobs">
+              v-on:click.prevent="sendSearchTerm">
         Search
       </button>
     </div>
@@ -23,38 +23,77 @@
 export default {
   data() {
     return {
-      searchTerm: null,
+      searchTerm: '',
     };
   },
   methods: {
-    searchForJobs() {
-      this.$router.push({ name: 'job-bank-search-results', query: { query: this.searchTerm }});
+    sendSearchTerm() {
+      // update the route to incorporate the search term
+      this.$i18n.locale === 'en' 
+        ? this.$router.push({ path: '/page/ontario-job-bank/search-results', query: { query: this.searchTerm }})
+        : this.$router.push({ path: '/fr/page/guichet-emplois-ontario/resultats-de-recherche' , query: { query: this.searchTerm }});
+
+      this.$emit('clicked', this.searchTerm);
     }
-  } 
+  },
+  beforeMount() {
+    // if a route is loaded with a search term but the searchTerm data is not set, update the searchTerm with the route query.
+    if (this.$route.query.query && !this.searchTerm) {
+      this.searchTerm = this.$route.query.query;
+    }
+  },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .ontario-form-label {
     margin: 1rem 0;
   }
 
+  .ontario-panel {
+    padding: 1rem;
+  }
+
   #ontario-job-bank__search-input {
-    width: 85%;
+    width: 86%;
     float: left;
-    padding: 1.35rem .5rem; 
+    padding: 1.37rem .5rem; 
+
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: 39.9375em) {
+      width: 70%;
+    }
+
+    @media screen and (max-width: 30em) {
+      width: 65%;
+    }
   }
 
   .ontario-job-bank__search-button {
     float: right;
-    width: 15%;
+    width: 14%;
     margin: 0;
     box-shadow: none;
     border-radius: 0 3px 3px 0;
     margin: 0 0 1.5rem;
-  }
 
-  .ontario-job-bank__search-button:hover {
-    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+    }
+
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      width: 20%;
+    }
+
+    @media screen and (max-width: 39.9375em) {
+      width: 30%;
+    }
+
+    @media screen and (max-width: 30em) {
+      width: 35%;
+    }
   }
 </style>

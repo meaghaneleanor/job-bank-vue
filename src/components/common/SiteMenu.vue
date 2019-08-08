@@ -46,11 +46,11 @@ export default {
       //find the opposite locale to retrieve the opposite path for routing
       let switchedLocale = (this.$i18n.locale === 'en') ? 'fr' : 'en';
 
-      //get the full path of the current route
-      let fullPath = this.$route.fullPath;
+      //get the path of the current route
+      let path = this.$route.path;
 
       //if a user clicks the switch locale link, retrieve the opposite locale's route path based on the current path
-      this.$router.push({ path: routeTranslation[switchedLocale][fullPath]});
+      this.$router.push({ path: routeTranslation[switchedLocale][path], query: this.$route.query });
     }
   },
   mounted() {

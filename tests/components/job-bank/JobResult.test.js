@@ -1,12 +1,13 @@
 import { shallowMount } from '@vue/test-utils';
-import { $t, i18nMock } from '../../test.utils.js';
+import { $t } from '../../test.utils.js';
+import $i18n from '../../test.utils.js';
 
 import JobResult from '../../../src/components/job-bank/JobResult.vue';
 
 const defaultOptions = {
   mocks: {
     $t, 
-    i18nMock,
+    $i18n
   },
   propsData:{
     job: {
@@ -39,7 +40,7 @@ describe('JobResult.vue', () => {
   });
 
   describe('methods', () => {
-    describe('.addSalaryStromg', () => {
+    describe('.addSalaryString', () => {
       describe('When the salary data contains a $', () => {
         it('should return false', () => {
           let mock = '$100 per hour';

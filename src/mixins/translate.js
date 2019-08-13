@@ -15,10 +15,13 @@ export const translate = {
       
       if (routes) {
         let correctRoute;
-        routes.map((route) => correctRoute = route.name === routeName ? route: correctRoute);
+        routes.map((route) => correctRoute = route.name === routeName ? route : correctRoute);
 
-        return i18n.locale === 'en' ? correctRoute.path : correctRoute.alias;
+        if (correctRoute) {
+          return i18n.locale === 'en' ? correctRoute.path : correctRoute.alias;
+        }
       }
+      return routeName;
     }
   }
 };

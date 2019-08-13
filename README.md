@@ -44,6 +44,7 @@ The majority of any new development will happen in the  **src** folder. Within t
 **Components**:
 * Includes all core components for the job-bank project. 
 * The **common** folder includes components that are used throughout many pages of the job-bank application (ex: Header, footer, etc.);
+* The **job-bank** folder includes components that are more specifically used for the job-bank project.
 
 **Plugins**: 
 * Includes all plugin files.
@@ -79,11 +80,15 @@ When the main language is toggled (controlled by the *switchLocale* function in 
 ### ***Creating Links***
 **Internal Links (Router-Links)**
 
-Internal links (links within the job bank application), are handled with vue-router's router-link element. The target location is specified with the `to` prop. It renders as an anchor tag with correct href by default.
+Internal links (links within the job bank application), are created with the InternalLink job-bank component. The InternalLink component uses vue-router's router-link element behind the scenes. It renders as an anchor tag with a correct href based on the attribute values passed in.
 
-In order for the router-links to work for both locales, the `to` value must always start with a call to the *translateRoute* function, found in `translate.js` file in the **src/mixins** folder. This function is passed the **name** of the route path to link to. Note that to use the *translateRoute* function, it must be imported as a mixin in the Vue component.
+The InternalLink component requires two element attributes: the URL and the link-text. The URL must **always** be in single quotes, as a string is required as the URL value for the link to render. The link-text attribute would likely be generated using i18n's translate method, also passed with single quotes. 
 
-    <router-link :to="translateRoute('jobs')">{{ $t('jobPage.title') }}</router-link>
+An example of how the Internal Link component would be used looks like:
+
+    <InternalLink 
+      :url="'jobs'"
+      :link-text="$t('jobPage.title')" />
 
 **External Links**
 

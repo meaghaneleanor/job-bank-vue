@@ -12,7 +12,7 @@
              id="ontario-job-bank__search-input"
              type="search">
       <button class="ontario-button ontario-button--primary ontario-job-bank__search-button"
-              v-on:click.prevent="sendSearchTerm">
+              v-on:click.prevent="searchForJobs">
         Search
       </button>
     </div>
@@ -27,27 +27,67 @@ export default {
     };
   },
   methods: {
-    sendSearchTerm() {
-      // update the route to incorporate the search term
-      this.$i18n.locale === 'en' 
-        ? this.$router.push({ path: '/page/ontario-job-bank/search-results', query: { query: this.searchTerm }})
-        : this.$router.push({ path: '/fr/page/guichet-emplois-ontario/resultats-de-recherche' , query: { query: this.searchTerm }});
+    formatRoute(searchTerm) {    
+      const query = {
+        query: this.searchTerm
+      };
 
-      this.$emit('clicked', this.searchTerm);
+      const path = this.$i18n.locale === 'en' ? '/page/ontario-job-bank/search-results' : '/fr/page/guichet-emplois-ontario/resultats-de-recherche';
+
+      return { path: path, query: query };
+    },
+    searchForJobs() {
+      // update the route
+      if (this.searchTerm !== "") {
+        this.$router.push(this.formatRoute(this.searchTerm));
+      }
+
+      let baseURL = this.$i18n.locale === 'en'
+        ? '/en/search'
+        : '/fr/recherche';
+      
+      this.searchTerm = this.formatSearchTerm(this.searchTerm);
+
+      let endpoint = this.searchTerm ? `${baseURL}?query=${this.searchTerm}` : `${baseURL}`;
+
+      this.$axios.get(endpoint)
+        .then((response) => {
+          let jobs = response.data;
+          this.$emit('searchCompleted', jobs);
+          return;
+        }).catch((error) => {
+          this.$emit('searchCompleted', { total: 0 });
+          return;
+        });
+    },
+    formatSearchTerm(searchTerm) {
+      let query = encodeURIComponent(searchTerm);
+      return query;
     }
   },
   beforeMount() {
     // if a route is loaded with a search term but the searchTerm data is not set, update the searchTerm with the route query.
     if (this.$route.query.query && !this.searchTerm) {
       this.searchTerm = this.$route.query.query;
+    } else {
+      this.searchTerm = '';
     }
+
+    this.searchForJobs(this.searchTerm);
   },
+  mounted() {
+    this.$root.$on('externalSearch', (query) => {
+      this.searchTerm = query ? query : '';
+      this.searchForJobs(this.searchTerm);
+    });
+  }
 };
 </script>
 
 <style lang="scss" scoped>
   .ontario-form-label {
     margin: 1rem 0;
+    cursor: default;
   }
 
   .ontario-panel {

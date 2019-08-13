@@ -1,11 +1,4 @@
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
-
-// This sets the mock adapter on the default instance
-var mock = new MockAdapter(axios);
-
-// Mock GET request for all english jobs
-mock.onGet('/en/search').reply(200, {
+let enJobsResponse = {
   "total": 4,
   "jobs": [
     {
@@ -45,9 +38,9 @@ mock.onGet('/en/search').reply(200, {
       "employer_name": "Canadian Digital Service"
     }
   ]
-});
+};
 
-mock.onGet('/fr/recherche').reply(200, {
+let frJobsResponse = {
   "total": 4,
   "jobs": [
     {
@@ -87,52 +80,15 @@ mock.onGet('/fr/recherche').reply(200, {
       "employer_name": "Service numérique canadien"
     }
   ]
-});
+};
 
-mock.onGet('/en/search?query=technology').reply(200, {
-  "total": 2,
-  "jobs": [
-    {
-      "jobs_id": "30938493",
-      "title": "Developer",
-      "date_posted": "2019-08-08T10:59:00Z",
-      "city_name": "Toronto",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/30938491",
-      "salary": "100K per year",
-      "employer_name": "ODS"
-    },
-    {
-      "jobs_id": "30938494",
-      "title": "Product Manager",
-      "date_posted": "2019-08-07T10:59:00Z",
-      "city_name": "Ottawa",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/30938491",
-      "salary": "100 hourly",
-      "employer_name": "Canadian Digital Service"
-    }
-  ]
-});
+let emptyJobsResponse = {
+  total: 0,
+  jobs: [],
+};
 
-mock.onGet('/fr/recherche?query=technology').reply(200, {
-  "total": 2,
-  "jobs": [
-    {
-      "jobs_id": "30938493",
-      "title": "Développeur",
-      "date_posted": "2019-08-08T10:59:00Z",
-      "city_name": "Toronto",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/30938491",
-      "salary": "100K par année",
-      "employer_name": "ODS"
-    },
-    {
-      "jobs_id": "30938494",
-      "title": "Directeur de produit",
-      "date_posted": "2019-08-07T10:59:00Z",
-      "city_name": "Ottawa",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/30938491",
-      "salary": "100 hourly",
-      "employer_name": "Service numérique canadien"
-    }
-  ]
-});
+let failedServerResponse = {
+  total: 0
+};
+
+export { enJobsResponse, frJobsResponse, emptyJobsResponse, failedServerResponse };

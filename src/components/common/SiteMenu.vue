@@ -51,7 +51,9 @@ export default {
 
       //if a user clicks the switch locale link, retrieve the opposite locale's route path based on the current path
       this.$router.push({ path: routeTranslation[switchedLocale][path], query: this.$route.query });
-    }
+
+      this.$root.$emit('externalSearch', this.$route.query.query);
+    },
   },
   mounted() {
     this.$foundation(this.$refs.dropdown);

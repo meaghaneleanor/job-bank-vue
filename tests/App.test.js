@@ -5,7 +5,6 @@ import VueRouter from 'vue-router';
 import routes from '../src/router/routes';
 
 import App from '../src/App.vue';
-import Main from '../src/components/job-bank/Main.vue';
 
 const localVue = createLocalVue();
 const router = new VueRouter({
@@ -31,14 +30,6 @@ describe("App.vue", () => {
     it('should display the expected html', () => {
       const wrapper = createComponent;
       expect(wrapper.html()).toMatchSnapshot();
-    });
-  });
-  
-  describe.skip('router-view', () => {
-    it("renders a child component via routing", () => {
-      const wrapper = createComponent;
-      wrapper.vm.$router.push("/page/ontario-job-bank");
-      expect(wrapper.find(Main).exists()).toBe(true);
     });
   });
 });

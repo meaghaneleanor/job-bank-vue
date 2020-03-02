@@ -1,0 +1,27 @@
+{
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true
+    }, 
+    "extends": [
+      "eslint:recommended",
+      "plugin:vue/strongly-recommended"
+    ],
+    "plugins": [
+      "vue"
+    ],
+    "rules": {
+      "indent": ["error", 2],
+      "semi": [2, "always"],
+      "no-console": "off",
+      "vue/max-attributes-per-line": "off",
+      "vue/html-closing-bracket-newline": "off",
+      "vue/v-on-style": ["error", "longform"],
+      "vue/singleline-html-element-content-newline": ["error", {
+        "ignores": ["a", "abbr", "span", "label", "button", "h1", "h2", "h3", "h4", "h5", "h6"]
+      }]
+    }
+  }
+  

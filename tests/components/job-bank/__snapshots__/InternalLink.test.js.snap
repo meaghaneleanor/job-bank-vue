@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InternalLink.vue snapshot should display the expected html 1`] = `
+"<div><router-link-stub to=\\"/page/ontario-job-bank\\" tag=\\"a\\" event=\\"click\\">
+    Job Link
+  </router-link-stub></div>"
+`;

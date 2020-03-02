@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main.vue snapshot should display the expected html 1`] = `
+"<div><h1 class=\\"ontario-padding--bottom-double\\">Ontario job bank</h1> <div class=\\"grid-x\\"><div class=\\"cell small-12 ontario-panel ontario-panel--aside\\"><label for=\\"ontario-job-bank__search-input\\" class=\\"ontario-form-label\\">
+      Search jobs
+    </label> <input role=\\"search\\" aria-label=\\"Search\\" id=\\"ontario-job-bank__search-input\\" type=\\"search\\" class=\\"ontario-form-input\\"> <button class=\\"ontario-button ontario-button--primary ontario-job-bank__search-button\\">
+      Search
+    </button></div></div> <div></div></div>"
+`;

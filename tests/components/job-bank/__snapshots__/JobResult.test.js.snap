@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JobResult.vue snapshot should display the expected html 1`] = `
+"<div class=\\"ontario-job-bank__single-job\\"><div class=\\"grid-x\\"><newflag-stub date=\\"2019-07-10T10:59:00Z\\"></newflag-stub> <div class=\\"ontario-job-bank-result__single-job--logo ontario-grid-cell large-1 medium-1 small-2\\"><img src=\\"/jobResultLogo.png\\" alt=\\"Ontario Trillium Logo\\"></div> <div class=\\"ontario-job-bank-result__single-job--info  ontario-grid-cell large-8 medium-8 small-7\\"><p><a href=\\"www.ontario.ca\\">Cool Guy</a></p> <p> </p> <p>, ON</p> <p><!---->
+        $1000 per hour
+      </p></div> <div class=\\"ontario-job-bank-result__single-job--job-details-button ontario-grid-cell large-3 medium-3 small-3\\"><a href=\\"www.ontario.ca\\" class=\\"ontario-button ontario-button--primary\\">
+        jobPage.detailsButton
+      </a></div></div></div>"
+`;

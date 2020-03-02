@@ -26,6 +26,11 @@ export default [
     component: Main,
   },
   {
+    name: 'home',
+    path: '/',
+    component: Main
+  },
+  {
     name: 'page-not-found',
     path: '/*',
     component: Page404

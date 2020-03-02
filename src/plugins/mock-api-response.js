@@ -10,21 +10,21 @@ mock.onGet('/en/search').reply(200, {
   "jobs": [
     {
       "jobs_id": "30938491",
-      "title": "chef",
+      "title": "Scrum Master",
       "date_posted": "2019-07-30T10:59:00Z",
       "city_name": "Port Perry",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/30938491",
-      "salary": "$24.00 hourly",
-      "employer_name": "Hyland Family Restaurant"
+      "url": "/job-detail-page",
+      "salary": "$50K per year",
+      "employer_name": "Tech Company X"
     },
     {
       "jobs_id": "30938492",
-      "title": "dishwasher",
+      "title": "Technical Writer",
       "date_posted": "2019-07-10T10:59:00Z",
       "city_name": "Toronto",
-      "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/30938491",
+      "url": "/job-detail-page",
       "salary": "24.00 hourly",
-      "employer_name": "Cows Restaurant"
+      "employer_name": "TechWorld 2020 🔥"
     },
     {
       "jobs_id": "30938493",

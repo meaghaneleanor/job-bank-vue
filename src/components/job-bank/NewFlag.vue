@@ -26,7 +26,8 @@ export default {
       
       let duration = 60000 * 60 * 24;
       let dayDifference = Math.round(timeDifference/duration);
-      return dayDifference > 3 ? false: true;
+
+      return dayDifference > process.env.VUE_APP_JB_NEW_FLAG ? false: true;
     }
   }
 };

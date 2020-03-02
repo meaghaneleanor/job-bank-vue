@@ -28,6 +28,10 @@ describe('NewFlag.vue', () => {
 
   describe('methods', () => {
     describe('.checkTimeDifference', () => {
+      beforeEach(() => {
+        process.env = Object.assign(process.env, { VUE_APP_JB_NEW_FLAG: 3 });
+      });
+
       describe('if the job was posted more than 3 days ago', () => {
         let date = '2019-07-10T10:59:00Z';
 

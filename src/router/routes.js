@@ -17,6 +17,12 @@ export default [
     name: 'job-bank-search',
     path: '/page/ontario-job-bank',
     alias: translatedAlias('/page/ontario-job-bank'),
+    component: Main
+  },
+  {
+    name: 'job-bank-search-results',
+    path: '/page/ontario-job-bank/search-results',
+    alias: translatedAlias('/page/ontario-job-bank/search-results'),
     component: Main,
   },
   {

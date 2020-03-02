@@ -1,26 +1,45 @@
 <template>
   <div>
-    <h1>Ontario job bank</h1>
-    <JobResult 
-      v-for="job in jobsObject.jobs" 
-      :key="job.id"
-      :job="job"
-    />
+    <h1 class="ontario-padding--bottom-double">Ontario job bank</h1>
+    <Search v-on:searchCompleted="updateJobsResult" />
+    <div v-if="jobsResult.total !== 0">
+      <JobResult 
+        v-for="job in jobsResult.jobs" 
+        :key="job.id"
+        :job="job"
+      />
+    </div>
+    <div v-else>
+      <p>No results found.</p>
+    </div>
   </div>
 </template>
 
 <script>
-import getJobs from '../../mixins/getJobs.js'; 
+import Search from './Search.vue';
 import JobResult from './JobResult.vue';
+
+import mockResponse from '../../plugins/mock-api-response.js';
 
 export default {
   components: {
-    JobResult
+    JobResult,
+    Search
   }, 
-  mixins: [getJobs],
-  computed: {
-    jobsObject() {
-      return this.getJobs(this.$i18n.locale);
+  data() {
+    return {
+      jobsResult: {}
+    };
+  },
+  methods: {
+    updateJobsResult(jobs) {
+      this.jobsResult = jobs;
+      return;
+    }
+  },
+  watch: {
+    $route() {
+      this.$root.$emit('externalSearch', this.$route.query.query);
     }
   }
 };
